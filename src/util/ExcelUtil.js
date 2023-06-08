@@ -84,8 +84,8 @@ const seperateRowDef = (rowDef) => {
     // nextLevelArray에 이것의 자식들을 다 집어넣어 currentArray를 업데이트 시킴
     const nextLevelArray = [];
     currentArray.forEach((item) => {
-      if (item.childrens) {
-        nextLevelArray.push(...item.childrens);
+      if (item.children) {
+        nextLevelArray.push(...item.children);
       }
     });
     // 없다면 안 집어넣음
@@ -156,9 +156,9 @@ const getNewRowsAndNewI = (rowDef, row, i) => {
         newRow[headerNm] = '';
       } else newRow[headerNm] = i++;
     }
-    if (header.childrens) {
-      // const rowOfChild = getNewRowsAndNewI(header.childrens, row, i);
-      const { newRow: rowOfChild } = getNewRowsAndNewI(header.childrens, row, i);
+    if (header.children) {
+      // const rowOfChild = getNewRowsAndNewI(header.children, row, i);
+      const { newRow: rowOfChild } = getNewRowsAndNewI(header.children, row, i);
       Object.assign(newRow, rowOfChild);
     }
   });
